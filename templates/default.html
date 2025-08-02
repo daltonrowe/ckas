@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{{title}} | Central Kentucky Audubon Society</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/desktop.css" media="(min-width: 700px)" />
+
+    <link rel="icon" type="image/png" href="img/favicon.svg" />
+  </head>
+  <body>
+    <main>
+      <a href="/" class="masthead">
+        <img src="./img/logo.svg" alt="Handdrawn sketch of a cardinal">
+        <h1>Central Kentucky Audubon Society</h1>
+      </a>
+
+      <nav>
+        <label for="mobile-menu">
+          Menu
+          <input type="checkbox" name="mobile-menu" id="mobile-menu">
+        </label>
+        
+        <a href="about">About</a>
+        <a href="events">Events</a>
+        <a href="join">Join</a>
+        <a href="contact">Contact</a>
+      </nav>
+
+      <article>
+        {{html}}
+      </article>
+    </main>
+  </body>
+</html>
