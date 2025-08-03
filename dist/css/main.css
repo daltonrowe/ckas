@@ -87,6 +87,10 @@ nav label {
   }
 }
 
+nav a.current {
+  background: #222;
+}
+
 label:has(#mobile-menu) {
   cursor: pointer;
 }

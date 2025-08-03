@@ -39,8 +39,10 @@ function loadTemplate(name) {
 function fillTemplate(template, meta) {
   let markup = template;
 
-  for (const key in meta) {
-    markup = markup.replaceAll(`{{${key}}}`, meta[key]);
+  const slots = markup.match(/\{\{([^}]*)\}\}/g, "");
+  for (const slot of slots) {
+    const key = slot.substring(2, slot.length - 2);
+    markup = markup.replaceAll(slot, meta[key] ?? "");
   }
 
   return markup;
