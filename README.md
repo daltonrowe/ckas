@@ -8,5 +8,5 @@ node build.js
 node build.js -f mypage.html
 
 # reload on change
-node --watch-path=./pages build.js
+node --watch-path=./src build.js
 ```

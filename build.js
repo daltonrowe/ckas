@@ -7,9 +7,10 @@ let file = process.argv.findIndex(
 
 file = file !== -1 ? process.argv[file + 1] : undefined;
 
-const pagesPath = path.join(import.meta.dirname, "pages");
 const distPath = path.join(import.meta.dirname, "dist");
-const templatesPath = path.join(import.meta.dirname, "templates");
+const srcPath = path.join(import.meta.dirname, "src");
+const pagesPath = path.join(srcPath, "pages");
+const templatesPath = path.join(srcPath, "templates");
 const templatesCache = {};
 
 function reset() {
@@ -47,18 +48,21 @@ function fillTemplate(template, meta) {
 
 function copyStatic(dirs) {
   for (const dir of dirs) {
-    fs.cpSync(path.join(import.meta.dirname, dir), path.join(distPath, dir), {
+    fs.cpSync(path.join(srcPath, dir), path.join(distPath, dir), {
       recursive: true,
     });
   }
 }
 
 function collectMeta(content) {
-  const [filemeta, html] = content.split("%%%");
+  const [filemeta, html, ...rest] = content.split("%%%");
+
   const meta = { template: "default", html: html?.trim() };
 
   const json = JSON.parse(filemeta);
   for (const key of Object.keys(json)) meta[key] = json[key] ?? "";
+  for (const i in rest)
+    meta[`html_${Number.parseInt(i) + 2}`] = rest[i]?.trim() ?? "";
 
   return meta;
 }
