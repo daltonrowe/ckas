@@ -37,9 +37,12 @@ h6 {
   color: white;
 }
 
+strong {
+  color:white;
+}
+
 main {
   background: rgba(0, 0, 0, 0.3);
-
   width: 100%;
   overflow: hidden;
 }
@@ -107,7 +110,8 @@ nav:has(#mobile-menu:checked) a {
   display: block;
 }
 
-article {
+article,
+aside {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -153,12 +157,67 @@ article a {
   list-style: disc;
 }
 
-#calendar {
-  width: 100%;
+aside {
   border-radius: .3rem;
   overflow: hidden;
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid #222;
-  padding: .5rem 1rem 1rem 1rem;
+}
+
+.cta-button {
+  background: green;
+  padding: 1rem;
+  border-radius: .25rem;
+  text-align: center;
+  text-decoration: none;
+  display:flex;
+  flex-direction: column;
+
+  &:hover {
+    background: rgb(5, 165, 5);
+  }
+
+  span {
+    font-weight: bold;
+  }
+
+  small {
+    font-size: .75rem;
+  }
+
+  em {
+    font-weight: normal;
+  }
+}
+
+.cta-em {
+  color: rgb(5, 165, 5);
+}
+
+.text-center {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap:.5rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap:.25rem;
+    font-size: 1rem;
+  }
+
+  input {
+    width: 100%;
+    padding:.5em;
+    font-size: 1rem;
+  }
+
+  textarea {
+    min-height: 120px;
+  }
 }
