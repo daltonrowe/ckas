@@ -22,6 +22,19 @@ aside#calendar {
   max-width: 36rem;
 }
 
+.masthead {
+  padding: 2rem;
+}
+
+.masthead img {
+  width: 60px;
+  height: 60px;
+}
+
+.masthead h1 {
+  font-size: 2.2rem;
+}
+
 nav {
   flex-direction: row;
   gap: 1rem;
