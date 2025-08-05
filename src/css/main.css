@@ -5,6 +5,10 @@
   list-style: none;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   background: #222;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -48,7 +52,7 @@ main {
 }
 
 .wide article {
-  padding: 1rem;
+  padding: .5rem 1.3rem 0 1.3rem;
 }
 
 .masthead {
@@ -174,6 +178,10 @@ aside#calendar {
   padding: 0.5rem
 }
 
+#calendar {
+  min-height: 700px;
+}
+
 .cta-button {
   background: green;
   padding: 1rem;
@@ -187,6 +195,7 @@ aside#calendar {
   cursor: pointer;
   color: white;
   font-size: 1rem;
+  -webkit-appearance: none;
 
   &:hover {
     background: rgb(5, 165, 5);
@@ -266,5 +275,15 @@ small.required {
         padding-left: 0;
       }
     }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }

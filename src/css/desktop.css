@@ -18,7 +18,11 @@ main {
   max-width: 90rem;
 }
 
-aside#calendar {
+aside {
+  max-width: 36rem;
+}
+
+aside.narrow {
   max-width: 36rem;
 }
 
