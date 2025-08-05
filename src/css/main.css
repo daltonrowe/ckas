@@ -71,7 +71,7 @@ main {
 
 .masthead h1 {
   font-size: 1.3rem;
-  line-height: 2.3rem;
+  line-height: 1.5rem;
 }
 
 nav {
@@ -90,7 +90,7 @@ nav label {
   border-radius: .2rem;
 
   &:hover {
-    background: #222;
+    background-color: #222;
   }
 }
 
@@ -238,4 +238,33 @@ form {
 
 small.required {
   color: red;
+}
+
+.container {
+  container-type: inline-size;
+  container-name: table-container;
+}
+
+@container table-container (width >= 500px ) {
+  td:not(:first-of-type) {
+    padding-left: 1rem;
+  }
+}
+
+
+@container table-container (width < 500px ) {
+  tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    tr {
+      display: flex;
+      flex-direction: column;
+
+      td {
+        padding-left: 0;
+      }
+    }
+  }
 }
