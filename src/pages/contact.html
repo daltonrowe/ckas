@@ -11,24 +11,25 @@
 </p>
 
 
-<form id="contact" name="contact" data-netlify="true">
+<form id="contact" action="/form_success" name="contact" method="POST" data-netlify="true">
+
   <label for="name">
-    <span>Name</span>
+    <span>Name <small class="required">*</small></span>
     <input type="text" name="name" required placeholder="John James Audubon"/>
   </label>
 
   <label for="email">
-    <span>Email</span>
+    <span>Email <small class="required">*</small></span>
     <input type="email" name="email" required placeholder="lovebirds@hendersongeneralstore.com"/>
   </label>
 
   <label for="telephone">
-    <span>Telephone</span>
+    <span>Telephone (Optional)</span>
     <input type="tel" name="telephone" />
   </label>
 
   <label for="message">
-    <span>Message</span>
+    <span>Message <small class="required">*</small></span>
     <textarea name="message" id="message"></textarea>
   </label>
 

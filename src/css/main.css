@@ -235,3 +235,7 @@ form {
     min-height: 120px;
   }
 }
+
+small.required {
+  color: red;
+}
